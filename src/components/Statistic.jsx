@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const url = 'https://library-tomiris-60f463aedbca.herokuapp.com/';
+// const url = 'https://library-tomiris-60f463aedbca.herokuapp.com/';
+const url = 'https://localhost:5050/';
 
 export default function Statistic() {
     const [books, setBooks] = useState([]);

@@ -2,7 +2,8 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 import {Button, Modal, ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
 
-const url = 'https://library-tomiris-60f463aedbca.herokuapp.com/';
+// const url = 'https://library-tomiris-60f463aedbca.herokuapp.com/';
+const url = 'https://localhost:5050/';
 
 export default function BookDetails() {
     const { id } = useParams();
