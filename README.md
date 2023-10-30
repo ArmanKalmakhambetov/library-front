@@ -20,7 +20,7 @@
 
 1. **Клонирование репозитория**:
 
-  git clone 
+  git clone https://github.com/ArmanKalmakhambetov/library-front.git
 
 2. **Установка зависимостей**:
 
