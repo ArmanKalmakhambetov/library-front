@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate} from "react-router-dom";
 
 // const url = 'https://library-tomiris-60f463aedbca.herokuapp.com/';
-const url = 'https://localhost:5050/';
+const url = 'http://localhost:5050/';
 
 export default function AddBookForm() {
     const [availableCategories, setAvailableCategories] = useState([]);
@@ -30,7 +30,7 @@ export default function AddBookForm() {
 
     const [bookData, setBookData] = useState({
         author: "",
-        categories: [], // Change to an array
+        categories: [], 
         description: "",
         image: "",
         title: "",
@@ -46,7 +46,6 @@ export default function AddBookForm() {
     const handleChange = (event) => {
         const { name, value } = event.target;
 
-        // For the 'categories' field, use an array with a single string value
         if (name === 'categories') {
             setBookData({ ...bookData, [name]: [value] });
         } else {
@@ -66,7 +65,7 @@ export default function AddBookForm() {
         })
             .then((response) => response.json())
             .then((data) => {
-                // Handle success and reset form
+                
                 console.log("Book added:", data);
                 setBookData({
                     author: "",
@@ -82,8 +81,6 @@ export default function AddBookForm() {
                     rating: 0,
                 })
                 navigate("/allBooks");
-
-                // You can update the books list here if needed.
             })
             .catch((error) => {
                 console.error("Error:", error);
@@ -121,10 +118,10 @@ export default function AddBookForm() {
                             <div>
                                 <label className="my-3" htmlFor="category">Жанр</label>
                                 <select
-                                    value={bookData.categories.name} // Set the selected category's name
+                                    value={bookData.categories.name} 
                                     onChange={handleChange}
                                     className="form-control"
-                                    name="categories" // Set the name to "categories" for the handleChange function
+                                    name="categories" 
                                 >
                                     {availableCategories.map((category, index) => (
                                         <option key={index} value={category.name}>

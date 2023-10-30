@@ -3,7 +3,7 @@ import {useNavigate, useParams} from 'react-router-dom';
 import {Button, Modal, ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
 
 // const url = 'https://library-tomiris-60f463aedbca.herokuapp.com/';
-const url = 'https://localhost:5050/';
+const url = 'http://localhost:5050/';
 
 export default function BookDetails() {
     const { id } = useParams();
@@ -85,8 +85,7 @@ export default function BookDetails() {
             setBookRating(book.rating);
             setBookDescription(book.description);
             setBookImage(book.image);
-            setBookCategories(book.categories.map(category => category.name).join(', '));  // Если categories является массивом
-            // Initialize other fields here that you want to edit
+            setBookCategories(book.categories.map(category => category.name).join(', '));
         }
     }, [book]);
 
@@ -113,7 +112,7 @@ export default function BookDetails() {
 
             const updatedBook = await response.json();
             setBook(updatedBook);
-            toggle();  // закрыть модальное окно
+            toggle();
         } catch (error) {
             console.error('There was a problem updating the book:', error);
         }
